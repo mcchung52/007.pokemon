@@ -1,0 +1,22 @@
+body {
+	background-color: black;
+}
+h1,label {
+	color: white;
+}
+.card {
+	border: 1px solid white;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	color: white;
+	text-align: center;
+}
+.card .name {
+	font-size: 20px;
+	font-weight: bold;
+}
+/*.card p {
+	display: inline-block;
+}*/
