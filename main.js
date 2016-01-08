@@ -6,7 +6,6 @@ var pokemon;
 var URL = 'http://pokeapi.co/'
 
 function init() {
-	console.log('ok!');
 	$('button').prop('enabled',false);
 	$('#get').click(getClicked);
 	
@@ -19,28 +18,7 @@ function init() {
 }
 
 function getClicked() {
-	/*$.ajax({
-		method: 'GET',
-		//url: 'http://pokeapi.co/api/v1/pokedex/1/',
-		url: 'http://www.wunderground.com/weather/api/d/196ab87c421083e2/',
-		success: function (data,status) {
-			data.pokemon.forEach(function(pokemon){
-				console.log(pokemon.name);
-			});
-		},
-		error: function(promise,status,error) {
 
-		}
-	});*/
-/*	.done(function() {
-		console.log("success");
-	})
-	.fail(function() {
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
-	});*/
 	var pokemonName = $('#input').val();
 	var selectedPokemon = pokemon.filter(function(ob){
 		return ob.name === pokemonName;
@@ -57,7 +35,6 @@ function getClicked() {
 					$pokemon.prepend($img);
 				}
 			});
-			console.log(data);
 			var $p1 = $('<p>').text(data.name).addClass('name');
 			var $p2 = $('<p>').text('HP: ' + data.hp);
 			var $p3 = $('<p>').text('Attack: ' + data.attack);
@@ -65,7 +42,5 @@ function getClicked() {
 			$pokemon.append($p1,$p2,$p3,$p4);
 		}
 	});
-	//$pokemon.append();
-	$('#container').append($pokemon);
-	
+	$('#container').append($pokemon);	
 }
