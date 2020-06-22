@@ -44,8 +44,8 @@ function getClicked() {
 				var $p3 = $('<p>').text('Attack: ' + stat['1'].base_stat);
 				var $p4 = $('<p>').text('Defense: ' + stat['2'].base_stat);
 				$pokemon.append($p1,$p2,$p3,$p4);
+				$('#container').append($pokemon);
 			}
 		});
-		$('#container').append($pokemon);
 	}	
 }
