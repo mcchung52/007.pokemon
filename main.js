@@ -8,7 +8,9 @@ var URL = 'http://pokeapi.co/api/v2'
 function init() {
 	$('button').prop('enabled',false);
 	$('#get').click(getClicked);
-	
+	$(window).keydown(function(e){
+		if (e.keyCode == 13) getClicked();
+	});
 	$.ajax(URL + "/pokedex/1/", {
 		success: function(data) {
 			pokemons = data.pokemon_entries;
