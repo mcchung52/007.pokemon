@@ -2,7 +2,7 @@
 
 $(document).ready(init);
 
-var pokemon;
+var pokemons;
 var URL = 'http://pokeapi.co/api/v2'
 
 function init() {
@@ -11,7 +11,7 @@ function init() {
 	
 	$.ajax(URL + "/pokedex/1/", {
 		success: function(data) {
-			pokemon = data.pokemon_entries;
+			pokemons = data.pokemon_entries;
 			$('button').prop('enabled',true);
 		}
 	});
@@ -20,10 +20,12 @@ function init() {
 function getClicked() {
 
 	var pokemonName = $('#input').val();
-	var selectedPokemons = pokemon.filter(function(ob){
+	var selectedPokemons = pokemons.filter(function(ob){
 		return ob.pokemon_species.name.toLowerCase().includes(pokemonName.toLowerCase());
 	});
-
+	
+	$('#container').empty();
+	
 	for (var pm in selectedPokemons) {
 		var $pokemon = $('<div>').addClass('card');
 		$.ajax(URL + '/pokemon/' + pm.entry_number, {
