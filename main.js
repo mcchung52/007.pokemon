@@ -28,7 +28,7 @@ function getClicked() {
 	
 	for (var pm in selectedPokemons) {
 		var $pokemon = $('<div>').addClass('card');
-		$.ajax(URL + '/pokemon/' + pm.entry_number, {
+		$.ajax(URL + '/pokemon/' + selectedPokemons[pm].entry_number, {
 			success: function(data) {
 				//$.ajax(URL + data.sprites[0].resource_uri, {
 				//	success: function(data) {
